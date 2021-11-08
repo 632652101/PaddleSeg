@@ -1,0 +1,22 @@
+_base_: '../_base_/cityscapes.yml'
+
+batch_size: 8
+iters: 60000
+
+model:
+  type: CGNet
+  in_channels: 720
+  num_classes: 19
+  m: 3
+  n: 21
+  drop_prob: 0.1
+  proj_dim: 720
+
+optimizer:
+  type: Adam
+  weight_decay: 0.0005
+
+lr_scheduler:
+  type: PolynomialDecay
+  learning_rate: 0.001
+  power: 0.9
